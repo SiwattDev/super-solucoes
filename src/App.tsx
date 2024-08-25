@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 import Form from './components/Form'
 import Introduction from './components/Introduction'
 import LicenseModels from './components/LicenseModels'
-import Video from './components/video'
+import Video from './components/Video'
 const Container = styled.div`
     background: #01060b;
     color: white;
