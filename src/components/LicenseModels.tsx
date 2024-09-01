@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 
 interface CardProps {
-    isVisible: boolean
+    $isvisible: boolean
 }
 
 const Container = styled.div`
@@ -34,9 +34,9 @@ const Card = styled.div<CardProps>`
     text-align: justify;
     border: 1px solid #e4bf5e;
     transition: all 0.3s ease-in-out;
-    opacity: ${(props) => (props.isVisible ? 1 : 0)};
+    opacity: ${(props) => (props.$isvisible ? 1 : 0)};
     transform: ${(props) =>
-        props.isVisible ? 'translateY(0)' : 'translateY(40px)'};
+        props.$isvisible ? 'translateY(0)' : 'translateY(40px)'};
     transition: all 0.6s ease-out;
 
     &:hover {
@@ -108,7 +108,7 @@ export default function LicenseModels() {
             <Container>
                 <Card
                     ref={(el) => (cardRefs.current[0] = el)}
-                    isVisible={visibleCards[0]}
+                    $isvisible={visibleCards[0]}
                 >
                     <CardTitle>Cursos de Formação e Capacitação</CardTitle>
                     <CardText>
@@ -124,7 +124,7 @@ export default function LicenseModels() {
                 </Card>
                 <Card
                     ref={(el) => (cardRefs.current[1] = el)}
-                    isVisible={visibleCards[1]}
+                    $isvisible={visibleCards[1]}
                 >
                     <CardTitle>
                         Licença de Marca e Plataforma de Gestão
@@ -142,7 +142,7 @@ export default function LicenseModels() {
                 </Card>
                 <Card
                     ref={(el) => (cardRefs.current[2] = el)}
-                    isVisible={visibleCards[2]}
+                    $isvisible={visibleCards[2]}
                 >
                     <CardTitle>Portfólio de Produtos</CardTitle>
                     <CardText>

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 
 interface AdvantageItemProps {
-    isVisible: boolean
+    $isvisible: boolean
 }
 
 const Container = styled.div`
@@ -32,9 +32,9 @@ const AdvantageList = styled.ul`
 const AdvantageItem = styled.li<AdvantageItemProps>`
     display: flex;
     margin-bottom: 20px;
-    opacity: ${(props) => (props.isVisible ? 1 : 0)};
+    opacity: ${(props) => (props.$isvisible ? 1 : 0)};
     transform: ${(props) =>
-        props.isVisible ? 'translateY(0)' : 'translateY(40px)'};
+        props.$isvisible ? 'translateY(0)' : 'translateY(40px)'};
     transition: all 0.6s ease-out;
 `
 
@@ -118,7 +118,7 @@ export default function Advantages() {
             <AdvantageList>
                 <AdvantageItem
                     ref={(el) => (itemRefs.current[0] = el)}
-                    isVisible={visibleItems[0]}
+                    $isvisible={visibleItems[0]}
                 >
                     <NumberCircle>1</NumberCircle>
                     <AdvantageText>
@@ -134,7 +134,7 @@ export default function Advantages() {
                 </AdvantageItem>
                 <AdvantageItem
                     ref={(el) => (itemRefs.current[1] = el)}
-                    isVisible={visibleItems[1]}
+                    $isvisible={visibleItems[1]}
                 >
                     <NumberCircle>2</NumberCircle>
                     <AdvantageText>
@@ -151,7 +151,7 @@ export default function Advantages() {
                 </AdvantageItem>
                 <AdvantageItem
                     ref={(el) => (itemRefs.current[2] = el)}
-                    isVisible={visibleItems[2]}
+                    $isvisible={visibleItems[2]}
                 >
                     <NumberCircle>3</NumberCircle>
                     <AdvantageText>
@@ -168,7 +168,7 @@ export default function Advantages() {
                 </AdvantageItem>
                 <AdvantageItem
                     ref={(el) => (itemRefs.current[3] = el)}
-                    isVisible={visibleItems[3]}
+                    $isvisible={visibleItems[3]}
                 >
                     <NumberCircle>4</NumberCircle>
                     <AdvantageText>

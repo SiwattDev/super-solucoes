@@ -34,12 +34,12 @@ const FormWrapper = styled.form`
     max-width: 800px;
 `
 
-const InputWrapper = styled.div<{ hasError?: boolean }>`
+const InputWrapper = styled.div<{ $haserror?: boolean }>`
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    border: ${(props) => (props.hasError ? '1px solid red' : 'none')};
-    padding: ${(props) => (props.hasError ? '8px' : '0')};
+    border: ${(props) => (props.$haserror ? '1px solid red' : 'none')};
+    padding: ${(props) => (props.$haserror ? '8px' : '0')};
 `
 
 const Input = styled.input`
@@ -270,7 +270,7 @@ export default function Form() {
         <Container id='form'>
             <Title>Formulário de Interesse</Title>
             <FormWrapper onSubmit={handleSubmit}>
-                <InputWrapper hasError={!!formErrors.businessName}>
+                <InputWrapper $haserror={!!formErrors.businessName}>
                     <label htmlFor='businessName'>Razão Social:</label>
                     <Input
                         id='businessName'
@@ -282,7 +282,7 @@ export default function Form() {
                         <ErrorMessage>{formErrors.businessName}</ErrorMessage>
                     )}
                 </InputWrapper>
-                <InputWrapper hasError={!!formErrors.cnpj}>
+                <InputWrapper $haserror={!!formErrors.cnpj}>
                     <label htmlFor='cnpj'>CNPJ:</label>
                     <Input
                         id='cnpj'
@@ -294,7 +294,7 @@ export default function Form() {
                         <ErrorMessage>{formErrors.cnpj}</ErrorMessage>
                     )}
                 </InputWrapper>
-                <InputWrapper hasError={!!formErrors.legalNeighborhood}>
+                <InputWrapper $haserror={!!formErrors.legalNeighborhood}>
                     <label htmlFor='legalNeighborhood'>Bairro:</label>
                     <Input
                         id='legalNeighborhood'
@@ -308,7 +308,7 @@ export default function Form() {
                         </ErrorMessage>
                     )}
                 </InputWrapper>
-                <InputWrapper hasError={!!formErrors.legalCity}>
+                <InputWrapper $haserror={!!formErrors.legalCity}>
                     <label htmlFor='legalCity'>Cidade Jurídica:</label>
                     <Input
                         id='legalCity'
@@ -320,7 +320,7 @@ export default function Form() {
                         <ErrorMessage>{formErrors.legalCity}</ErrorMessage>
                     )}
                 </InputWrapper>
-                <InputWrapper hasError={!!formErrors.legalState}>
+                <InputWrapper $haserror={!!formErrors.legalState}>
                     <label htmlFor='legalState'>Estado:</label>
                     <Input
                         id='legalState'
@@ -332,7 +332,7 @@ export default function Form() {
                         <ErrorMessage>{formErrors.legalState}</ErrorMessage>
                     )}
                 </InputWrapper>
-                <InputWrapper hasError={!!formErrors.legalZipCode}>
+                <InputWrapper $haserror={!!formErrors.legalZipCode}>
                     <label htmlFor='legalZipCode'>CEP:</label>
                     <Input
                         id='legalZipCode'
@@ -344,7 +344,7 @@ export default function Form() {
                         <ErrorMessage>{formErrors.legalZipCode}</ErrorMessage>
                     )}
                 </InputWrapper>
-                <InputWrapper hasError={!!formErrors.legalPhone}>
+                <InputWrapper $haserror={!!formErrors.legalPhone}>
                     <label htmlFor='legalPhone'>Telefone:</label>
                     <Input
                         id='legalPhone'
@@ -356,7 +356,7 @@ export default function Form() {
                         <ErrorMessage>{formErrors.legalPhone}</ErrorMessage>
                     )}
                 </InputWrapper>
-                <InputWrapper hasError={!!formErrors.legalEmail}>
+                <InputWrapper $haserror={!!formErrors.legalEmail}>
                     <label htmlFor='legalEmail'>E-mail:</label>
                     <Input
                         id='legalEmail'
@@ -368,7 +368,7 @@ export default function Form() {
                         <ErrorMessage>{formErrors.legalEmail}</ErrorMessage>
                     )}
                 </InputWrapper>
-                <InputWrapper hasError={!!formErrors.responsibleName}>
+                <InputWrapper $haserror={!!formErrors.responsibleName}>
                     <label htmlFor='responsibleName'>
                         Nome do Responsável:
                     </label>
@@ -384,7 +384,7 @@ export default function Form() {
                         </ErrorMessage>
                     )}
                 </InputWrapper>
-                <InputWrapper hasError={!!formErrors.cpf}>
+                <InputWrapper $haserror={!!formErrors.cpf}>
                     <label htmlFor='cpf'>CPF:</label>
                     <Input
                         id='cpf'
@@ -399,7 +399,7 @@ export default function Form() {
                 {!formData.sameAddress && (
                     <React.Fragment>
                         <InputWrapper
-                            hasError={!!formErrors.individualNeighborhood}
+                            $haserror={!!formErrors.individualNeighborhood}
                         >
                             <label htmlFor='individualNeighborhood'>
                                 Bairro (Pessoa Física):
@@ -416,7 +416,7 @@ export default function Form() {
                                 </ErrorMessage>
                             )}
                         </InputWrapper>
-                        <InputWrapper hasError={!!formErrors.individualCity}>
+                        <InputWrapper $haserror={!!formErrors.individualCity}>
                             <label htmlFor='individualCity'>
                                 Cidade (Pessoa Física):
                             </label>
@@ -432,7 +432,7 @@ export default function Form() {
                                 </ErrorMessage>
                             )}
                         </InputWrapper>
-                        <InputWrapper hasError={!!formErrors.individualState}>
+                        <InputWrapper $haserror={!!formErrors.individualState}>
                             <label htmlFor='individualState'>
                                 Estado (Pessoa Física):
                             </label>
@@ -448,7 +448,9 @@ export default function Form() {
                                 </ErrorMessage>
                             )}
                         </InputWrapper>
-                        <InputWrapper hasError={!!formErrors.individualZipCode}>
+                        <InputWrapper
+                            $haserror={!!formErrors.individualZipCode}
+                        >
                             <label htmlFor='individualZipCode'>
                                 CEP (Pessoa Física):
                             </label>
@@ -467,7 +469,7 @@ export default function Form() {
                         </InputWrapper>
                     </React.Fragment>
                 )}
-                <InputWrapper hasError={!!formErrors.individualPhone}>
+                <InputWrapper $haserror={!!formErrors.individualPhone}>
                     <label htmlFor='individualPhone'>
                         Telefone (Pessoa Física):
                     </label>
@@ -483,7 +485,7 @@ export default function Form() {
                         </ErrorMessage>
                     )}
                 </InputWrapper>
-                <InputWrapper hasError={!!formErrors.individualEmail}>
+                <InputWrapper $haserror={!!formErrors.individualEmail}>
                     <label htmlFor='individualEmail'>
                         E-mail (Pessoa Física):
                     </label>
