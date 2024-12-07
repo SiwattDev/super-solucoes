@@ -32,7 +32,12 @@ export default function Footer() {
             />
             <p style={{ margin: 0 }}>
                 Super Soluções - © {new Date().getFullYear()}, Desenvolvido por
-                <Link style={{ marginLeft: '5px' }}>VANSISTEM</Link>
+                <Link
+                    style={{ marginLeft: '5px' }}
+                    href='https://github.com/vanortton'
+                >
+                    VANORTON
+                </Link>
             </p>
         </Container>
     )
